@@ -1,0 +1,71 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+}
+
+.css-add-button, .css-search-button {
+    /* rgb = red, green, blue */
+    background-color: white;
+    color: green;
+    border: 0.1em solid green;
+    cursor: pointer;
+    width: 20%;
+    transition: 1s;
+    box-shadow: 3px 3px 3px rgb(31, 74, 28);
+    border-radius: 10vw;
+    display: inline-block;
+}
+
+/* pseudo-class invert colors */
+.css-add-button:hover, .css-search-button:hover {
+    background-color: green;
+    color: white;
+    border: none;
+    width: 22%;
+}
+
+/* pseudo-class - what should happen when button is clicked */
+.css-add-button:active, .css-search-button:active {
+    opacity: 0.01s;
+    background-color: black;
+}
+
+.emojis {
+    font-size: 400%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.kaktus {
+    font-size: 400%;
+    margin: 0%
+}
+
+input {
+    border: 1vw solid transparent;
+    font-size: 2vw;;
+    text-align: center;
+    background-color: #c8c1c1;
+    width: 50%;
+    margin: 3%;
+    border-radius: 10vw;
+    box-shadow: 3px 3px 3px rgb(24, 24, 24);
+}
+
+.box {
+    display: inline-block;
+    width: 40%;
+    border: 0.15vw solid black;
+    margin: 0.5vw;
+    vertical-align: top;
+}
+
+/* pseudo-class 
+.css-add-button:hover, .css-search-button:hover {
+    opacity: 0.6;
+}
+*/

@@ -1,21 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Important Meta Tags -->
         <meta charset="UTF-8">
         <meta name="description" content="Web Application">
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content="David Bistron">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" href="main.css">
+        <meta name="viewport" content="width=device-width" content="height=device-height" initial-scale=1.0">
+        <!-- Integration of external css sheet -->
+        <link rel="stylesheet" href="styles/main.css">
 
         <title>Recipe Manager</title>
     </head>
-    
-    <body>
-        <h1>Header</h1>
-            <p>Paragraph.</p>
 
-        <script src="script.js"></script>
+        <body>
+            <div class="emojis">
+                &#127813; &#129382; &#129365; &#127798;
+            </div>
+            
+            <h1>Recipe Manager</h1>
+            
+            <hr>
+            
+            <div class="box">
+                <p>Search for your recipe:</p>
+                
+                <input type="text" placeholder="Search Recipe" class="js-recipe-search" id="js-auto">
+                    
+                <button class="css-search-button" onclick="
+                    searchRecipe();
+                ">Search</button>
+            </div>
+
+            <div class="box">
+                <p>Required ingredients for your recipe:</p>
+                <p class="js-ingredients-display"></p>
+            </div>
+
+            <div class="box">
+                <p>Ingredients available:</p>
+                <input type="text" placeholder="Add Ingredient" class="js-add-ingredient">
+
+                <button class="css-add-button" onclick="
+                    addIngredient();
+                ">Add</button>
+            </div>
+
+            <div class="box" id="js-buy-display"> 
+                <p>Available:</p>
+            </div>
+
+            <div class="box">  
+                <p id="category">To cook this recipe you need to buy:</p>
+            </div>
+
+            <div class="box">  
+                <p id="category">&#127805; Ingredients will be displayed here! &#127798;</p>
+            </div>
+
+            <div class="box">  
+                <p id="category"> Possible recipes you can cook according to your available ingredients:</p>
+            </div>
+
+            <div class="box">  
+                <p id="category">&#127829; Recipes will be displayed here! &#129368;</p>
+            </div>
+
+            <hr>
+
+            <div>
+                <p>Made with love by</p>
+                <p class="kaktus">&#127797;</p>
+                <p>Mr. Kaktus</p>
+                
+            </div>
+        <script src="scripts/script.js"></script>
     </body>
 </html>
