@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+		<!-- Important Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="description" content="Web Application">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="David Bistron">
+		<meta name="viewport" content="width=device-width" content="height=device-height" initial-scale="1.0">
+		
+		<!-- Integration of external css sheet -->
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/header.css">
+		<link rel="stylesheet" href="styles/menu.css">
+
+		<!-- Title and Favicon -->
+		<title>Nutrition Week Planner</title>
+		<link rel="icon" type="image/x-icon" href="images/robot.png">
+	</head>
+
+	<body>
+		<!-- Heading -->
+		<h1>Nutrition Week Planner</h1>
+		
+		<!-- 
+		// Header Menubar Flexbox
+		<div class="header-flexbox">
+				<div class="header-recipes">Recipes</div>
+				<div class="header-fridge">Fridge</div>
+				<div class="header-weekplan">Weekplan</div>
+				<div class="header-shoppinglist">Shopping-List</div>
+		</div>
+		-->
+	
+	<div class="main-grid">
+		<!-- <div class="grid-menu-wrapper-left"> -->
+			<div class="menu-box">
+				<p>Recipe</p>
+				<input type="text" placeholder="Search Recipe" class="js-recipe-search" id="js-auto">			
+				<button class="css-search-button" onclick="
+							searchRecipe();
+					">Search</button>
+			</div>
+
+			<div class="menu-box">
+					<p>Required ingredients for your recipe:</p>
+					<p class="js-ingredients-display"></p>
+			</div>
+
+      <div class="menu-box">
+				<p>Ingredients available:</p>
+				<input type="text" placeholder="Add Ingredient" class="js-add-ingredient">
+
+				<button class="css-add-button" onclick="
+						addIngredient();
+				">Add</button>
+			</div>
+
+			<div class="menu-box" id="js-buy-display"> 
+					<p>Available:</p>
+			</div>
+		
+
+		<!-- <div class="grid-menu-wrapper-right"> -->
+			<div class="menu-box-recipe">
+				<p>Recipe 1</p>
+				<input type="text" placeholder="Search Recipe" class="js-recipe-search" id="js-auto">			
+				<button class="css-search-button" onclick="
+							searchRecipe();
+					">Search</button>
+			</div>
+	</div>
+           
+	<hr>
+
+		<!-- 
+		<div>
+				<p>Made with love by</p>
+				<img src="images/robot.png">
+				<p>Mr. Robot</p>
+		</div>
+		 -->
+
+		<hr>
+		
+		<!-- Grid-Layout
+		// Build Grid
+		<div style="
+				margin-top: 5%;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				column-gap: 2%;
+				row-gap: 4%;
+		">
+				<div style="background-color: lightblue; height: 100%">1</div>
+				<div style="background-color: lightsalmon; height: 100%;">2</div>
+				<div style="background-color: lightblue; height: 100%;">3</div>
+				<div style="background-color: lightsalmon; height: 100%;">4</div>
+				<div style="background-color: lightblue; height: 100%;">5</div>
+				<div style="background-color: lightsalmon; height: 100%;">6</div>
+		</div>
+		-->
+
+		<!-- Flexbox
+		// div container
+		<div style="
+				display:flex;
+				flex-direction:row;
+		">
+				<div style="background-color: lightblue;">div 1</div>
+				<div style="background-color: lightcoral;">div 2</div>
+		 -->
+          
+      <script src="scripts/script.js"></script>
+  </body>
+</html>

@@ -1,26 +1,49 @@
+/* Main */
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    font-family: fantasy;
+    background-color: rgba(33, 50, 73);
+    color: rgba(255, 255, 255);
     text-align: center;
+    margin: 1em;
 }
 
+h1 {
+    text-align: center;
+    background-color: rgba(82, 150, 214);
+    height: 3em;
+    align-content: center;
+    border-radius: 1em;
+    border: 0.1em solid white;
+}
+
+img {
+    width: 20%;
+    height: auto;
+}
+
+/* Image Flip by hover */
+img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+/* Buttons */
 .css-add-button, .css-search-button {
     /* rgb = red, green, blue */
     background-color: white;
-    color: green;
-    border: 0.1em solid green;
+    color: rgba(33, 50, 73);
+    border: 0.2em solid black;
     cursor: pointer;
     width: 20%;
+    height: 10%;
     transition: 1s;
     box-shadow: 3px 3px 3px rgb(31, 74, 28);
     border-radius: 10vw;
-    display: inline-block;
 }
 
 /* pseudo-class invert colors */
 .css-add-button:hover, .css-search-button:hover {
-    background-color: green;
+    background-color: rgba(33, 50, 73);
     color: white;
     border: none;
     width: 22%;
@@ -29,43 +52,59 @@ body {
 /* pseudo-class - what should happen when button is clicked */
 .css-add-button:active, .css-search-button:active {
     opacity: 0.01s;
-    background-color: black;
-}
-
-.emojis {
-    font-size: 400%;
-}
-
-h1 {
-    text-align: center;
-}
-
-.kaktus {
-    font-size: 400%;
-    margin: 0%
+    background-color: black;   
 }
 
 input {
-    border: 1vw solid transparent;
+    border: none;
     font-size: 2vw;;
     text-align: center;
-    background-color: #c8c1c1;
+    background-color: rgba(50, 114, 185);
+    color: white;
     width: 50%;
+    height: 10%;
     margin: 3%;
     border-radius: 10vw;
     box-shadow: 3px 3px 3px rgb(24, 24, 24);
 }
 
-.box {
-    display: inline-block;
-    width: 40%;
-    border: 0.15vw solid black;
-    margin: 0.5vw;
-    vertical-align: top;
+::placeholder {
+    color: white;
 }
 
-/* pseudo-class 
-.css-add-button:hover, .css-search-button:hover {
-    opacity: 0.6;
+/* Side-Menu */
+.main-grid{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    height: 42em;
+    column-gap: 2%;
+    row-gap: 2%;
+    padding-bottom: 5%; 
 }
-*/
+
+.menu-box-left {
+    border: 0.1em solid white;
+    background-color: rgba(82, 150, 214);
+    vertical-align: top;
+    border-radius: 1em;
+    cursor: pointer;
+    align-content: center;
+}
+
+.menu-box-left:hover {
+    background-color: rgb(33, 50, 73);
+}
+
+.menu-box-left:focus {
+    background-color: rgb(33, 50, 73);
+}
+
+.menu-box-right {
+    border: 0.1em solid white;
+    background-color: rgba(82, 150, 214);
+    vertical-align: top;
+    border-radius: 1em;
+    /* Syntax: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
+    grid-area: 1 / 2 / 5 / 2;
+    align-content: center;
+}

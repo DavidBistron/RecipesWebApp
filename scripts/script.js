@@ -1,4 +1,10 @@
-// Recipes
+class rezepte {
+    constructor() {
+        
+    }
+}
+
+// Recipes Array --> IN PROJEKT 2 mit TS verwende Array - TUPEL (!)
 const recipeList = [
     'Burger',
     'Chilli Sin Carne',
@@ -11,32 +17,47 @@ const recipeList = [
     'Salad',
 ];
 
+// Menu Navigation, change content of menu-box-right
+function navRecipes() {
+    document.querySelector('.menu-box-right').innerHTML = `
+    <input type="text" placeholder="Search Recipe" class="js-recipe-search">
+    <button class="css-search-button" onclick="${searchRecipe()}">Search</button>
+    `;
+    
+    document.querySelector('.menu-box-right').innerHTML = `
+    <p>${recipeList[0]}</p> 
+    <p>${recipeList[8]}</p>`;
+}
+
+function navFoodSupplies() {
+    
+}
+
+function navShoppingList() {
+    document.querySelector('.menu-box-right').innerHTML = "Shopping List";
+}
+
+function navWeekPlanner() {
+    document.querySelector('.menu-box-right').innerHTML = "Week Planner";
+}
+
 // Function for searching after recipe
 function searchRecipe() {
     // get the user input and put it into JS
-    const searchElement = document.querySelector('.js-recipe-search');
+    const searchElement = document.getElementById("js-recipe-search");
     // save search item into a value
     const element = searchElement.value;
-    
-    /* add eventListener to accept input when enter is pressed
-    searchElement.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            document.getElementById("css-search-button").click();
-        }
-    })
-    */
 
     // display searched values on html website
-    document.querySelector('.js-ingredients-display').innerHTML = element;
+    document.querySelector('.inner-box-right').innerHTML = element;
 
     // chek if searched value is a known recipe
     if (searchElement.value === 'Pancake') {
-        document.querySelector('.js-ingredients-display').innerHTML = "Eggs, Milk, Sugar";
+        document.querySelector('.menu-box-right').innerHTML = "Eggs, Milk, Sugar";
     } else if (searchElement.value === 'Salad') {
-        document.querySelector('.js-ingredients-display').innerHTML = "Lettuce, Corn, Cucumber, Tomato";
+        document.querySelector('.menu-box-right').innerHTML = "Lettuce, Corn, Cucumber, Tomato";
     } else if (searchElement.value === 'Pizza') {
-        document.querySelector('.js-ingredients-display').innerHTML = "Dough, Tomato, Cheese, Oregano, Onion";
+        document.querySelector('.menu-box-right').innerHTML = "Dough, Tomato, Cheese, Oregano, Onion";
     }
     // empty search field after search
     searchElement.value = '';
@@ -44,6 +65,8 @@ function searchRecipe() {
 
 // ------------------------------------------------------------------------------
 // Empty array for list of ingredients
+
+/*
 const ingredientList = [];
 
 renderIngredientList();
@@ -88,11 +111,10 @@ function determineIngredients() {
 }
 */
 
-
-
 // ------------------------------------------------------------------------------
 // Autocomplete
 
+/*
 function autocomplete(inp, arr) {
     var currentFocus;
 
@@ -193,3 +215,4 @@ document.addEventListener("click", function (e) {
 }
 
 autocomplete(document.getElementById("js-auto"), recipeList);
+*/

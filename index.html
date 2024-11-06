@@ -1,79 +1,66 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- Important Meta Tags -->
-        <meta charset="UTF-8">
-        <meta name="description" content="Web Application">
-        <meta name="keywords" content="HTML, CSS, JavaScript">
-        <meta name="author" content="David Bistron">
-        <meta name="viewport" content="width=device-width" content="height=device-height" initial-scale=1.0">
-        <!-- Integration of external css sheet -->
-        <link rel="stylesheet" href="styles/main.css">
+<html lang="en-us">
+  <head>
+		<!-- Important Meta Tags -->
+		<meta charset="UTF-8">
+		<meta name="description" content="Web Application">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="David Bistron">
+		<meta name="viewport" content="width=device-width" content="height=device-height" initial-scale="1.0">
+		
+		<!-- Integration of external css sheet -->
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/header.css">
+		<link rel="stylesheet" href="styles/menu.css">
 
-        <title>Recipe Manager</title>
-    </head>
+		<!-- Title and Favicon -->
+		<title>Nutrition Week Planner</title>
+		<link rel="icon" type="image/x-icon" href="images/robot.png">
+	</head>
 
-        <body>
-            <div class="emojis">
-                &#127813; &#129382; &#129365; &#127798;
-            </div>
-            
-            <h1>Recipe Manager</h1>
-            
-            <hr>
-            
-            <div class="box">
-                <p>Search for your recipe:</p>
-                
-                <input type="text" placeholder="Search Recipe" class="js-recipe-search" id="js-auto">
-                    
-                <button class="css-search-button" onclick="
-                    searchRecipe();
-                ">Search</button>
-            </div>
+	<body>
+		<!-- Heading -->
+		<h1>Nutrition Week Planner</h1>
 
-            <div class="box">
-                <p>Required ingredients for your recipe:</p>
-                <p class="js-ingredients-display"></p>
-            </div>
+		<!-- Main grid -->
+		
+		<div class="main-grid">
+			<!-- Menu Items on left -->
+			<div class="menu-box-left" tabindex="1" id="js-recipe-search">
+				<h2 onclick="navRecipes()">Recipes</h2>
+			</div>
 
-            <div class="box">
-                <p>Ingredients available:</p>
-                <input type="text" placeholder="Add Ingredient" class="js-add-ingredient">
+			<div class="menu-box-left" tabindex="2">
+				<h2 onclick="navFoodSupplies()">Food Supplies</h2>
+			</div>
 
-                <button class="css-add-button" onclick="
-                    addIngredient();
-                ">Add</button>
-            </div>
+      <div class="menu-box-left" tabindex="3">
+				<h2 onclick="navShoppingList()">Shopping List</h2>
+			</div>
 
-            <div class="box" id="js-buy-display"> 
-                <p>Available:</p>
-            </div>
+			<div class="menu-box-left" tabindex="4"> 
+					<h2 onclick="navWeekPlanner()">Week Planner</h2>
+			</div>
+			
+			<!-- Main content on right -->
+			<div class="menu-box-right">
+				<h2>Welcome to the Nutrition Week Planner!</h2>
+				<p>Start planning by choosing one of the options on the left hand side!</p>
+				<img src="images/robot.png">
+				
+				<div class="inner-box-right">
+					Inner Box
+				</div>
+			</div>
 
-            <div class="box">  
-                <p id="category">To cook this recipe you need to buy:</p>
-            </div>
+		</div>
 
-            <div class="box">  
-                <p id="category">&#127805; Ingredients will be displayed here! &#127798;</p>
-            </div>
+		<hr>
+			<p></p>
+			<div>Made with &#128153; by Mr. Robot</div>
 
-            <div class="box">  
-                <p id="category"> Possible recipes you can cook according to your available ingredients:</p>
-            </div>
-
-            <div class="box">  
-                <p id="category">&#127829; Recipes will be displayed here! &#129368;</p>
-            </div>
-
-            <hr>
-
-            <div>
-                <p>Made with love by</p>
-                <p class="kaktus">&#127797;</p>
-                <p>Mr. Kaktus</p>
-                
-            </div>
-        <script src="scripts/script.js"></script>
-    </body>
+			<hr>
+    
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
