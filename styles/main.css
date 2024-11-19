@@ -1,6 +1,6 @@
 /* Main */
 body {
-    font-family: fantasy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgba(33, 50, 73);
     color: rgba(255, 255, 255);
     text-align: center;
@@ -16,13 +16,7 @@ tr:hover {
     background-color: rgba(82, 150, 214);
 }
 
-.trash-can {
-    background-color: rgba(33, 50, 73);
-    border: none;
-}
-
 button {
-    font-family: fantasy;
     font-size: 150%;
     color: rgba(255, 255, 255);
 }
@@ -49,8 +43,8 @@ img:hover {
 /* Main Grid */
 .main-grid {
     display: grid;
-    grid-template-columns: 35% 1fr;
-    column-gap: 5%;
+    grid-template-columns: 25% 1fr;
+    column-gap: 3%;
     padding-bottom: 5%; 
 }
 
@@ -102,11 +96,10 @@ img:hover {
     background-color: rgba(50, 114, 185);
     color: rgba(255, 255, 255);
     cursor: pointer;
-    width: 30%;
+    width: 20%;
     height: 10%;
     transition: 1s;
     border-radius: 10vw;
-    
 }
 
 /* pseudo-class invert colors */
@@ -114,7 +107,6 @@ img:hover {
     background-color: rgb(214, 135, 82);
     color: rgba(255, 255, 255);
     border: none;
-    width: 35%;
 }
 
 /* pseudo-class - what should happen when button is clicked */
@@ -124,40 +116,21 @@ img:hover {
 }
 
 input {
-    font-family: fantasy;
     border: none;
-    font-size: 120%;
     text-align: center;
     background-color: rgba(50, 114, 185);
     color: rgba(255, 255, 255);
-    width: 30%;
-    height: 10%;
-    margin: 3%;
+    width: 50%;
+    height: 80%;
     border-radius: 5vw;
-    box-shadow: 3px 3px 3px rgb(24, 24, 24);
 }
 
 ::placeholder {
     color: rgba(255, 255, 255);
 }
 
-.shopping-container {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.recipe-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
 }
-
-/* Hide browsers default checkbox */
-.shopping-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-/* Create custom checkbox */

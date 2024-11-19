@@ -10,8 +10,6 @@
 		
 		<!-- Integration of external css sheet -->
     <link rel="stylesheet" href="styles/main.css">
-		<link rel="stylesheet" href="styles/header.css">
-		<link rel="stylesheet" href="styles/menu.css">
 
 		<!-- Title and Favicon -->
 		<title>Nutrition Week Planner</title>
@@ -33,7 +31,55 @@
 
 			<!-- Right grid -->
 			<div class="main-grid-right">
-				
+				<div>
+					<!-- List of all recipes -->
+					<table id="week-list" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>Week Day</th>
+								<th>Recipe</th>
+								<th>Delete</th> 
+							</tr>
+						</thead>
+						<tbody>
+							<!-- dynamic display of ingredients via JS -->
+						</tbody>
+					</table>
+				</div>
+
+				<!-- Input for adding new days & recipes for the week -->
+				<div>
+					<form id="weekElement-form">
+						
+						<h2>Add a new recipe:</h2>
+						<hr>
+						
+						<div class="recipe-grid">
+							<p>Day of Week:</p>
+							<input list="weekdays" id="weekElement-day" placeholder="Day" required>
+								<datalist id="weekdays">
+									<option value="Monday">
+									<option value="Tuesday">
+									<option value="Wednesday">
+									<option value="Thursday">
+									<option value="Friday">
+									<option value="Saturday">
+									<option value="Sunday">
+								</datalist>
+						</div>
+
+						<div class="recipe-grid">
+							<p>Recipe:</p>
+							<input type="text" id="weekElement-recipe" placeholder="Recipe" required>
+						</div>
+
+						<div>
+							<p></p>
+							<button class="search-button" type="submit">Add</button>
+						</div>
+
+					</form>
+				</div>
 			</div>
 		</div>
 
@@ -43,6 +89,6 @@
 		<hr>
 
     <script src="scripts/navigation-extended.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/weekplanner.js"></script>
   </body>
 </html>

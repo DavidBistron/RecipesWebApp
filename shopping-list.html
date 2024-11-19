@@ -31,30 +31,52 @@
 
 			<!-- Right grid -->
 			<div class="main-grid-right">
-				<label class="shopping-container">Milk
-					<input type="checkbox" checked="checked">
-					<span class="span-check"></span>
-				</label>
+				<div>
+					<!-- List of all recipes -->
+					<table id="shopping-list" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>Shopping Element</th>
+								<th>Category</th>
+								<th>Amount</th>
+								<th>Delete</th> 
+							</tr>
+						</thead>
+						<tbody>
+							<!-- dynamic display of ingredients via JS -->
+						</tbody>
+					</table>
+				</div>
 
-				<label class="shopping-container">Water
-					<input type="checkbox" checked="checked">
-					<span class="span-check"></span>
-				</label>
+				<!-- Input for adding new recipes -->
+				<div>
+					<form id="shoppingElement-form">
+						
+						<h2>Add a new ingredient:</h2>
+						<hr>
+						
+						<div class="recipe-grid">
+							<p>Ingredient Name:</p>
+							<input type="text" id="shoppingElement-name" placeholder="Name" required>
+						</div>
 
-				<label class="shopping-container">Eggs
-					<input type="checkbox" checked="checked">
-					<span class="span-check"></span>
-				</label>
+						<div class="recipe-grid">
+							<p>Category:</p>
+							<input type="text" id="shoppingElement-category" placeholder="Name" required>
+						</div>
 
-				<label class="shopping-container">Banana
-					<input type="checkbox" checked="checked">
-					<span class="span-check"></span>
-				</label>
+						<div class="recipe-grid">
+							<p>Amount:</p>
+							<input type="text" id="shoppingElement-amount" placeholder="Name" required>
+						</div>
 
-				<label class="shopping-container">Apples
-					<input type="checkbox" checked="checked">
-					<span class="span-check"></span>
-				</label>
+						<div>
+							<p></p>
+							<button class="search-button" type="submit">Add</button>
+						</div>
+
+					</form>
+				</div>
 				
 			</div>
 		</div>
@@ -66,6 +88,6 @@
     
     <!-- Integration of external script -->
     <script src="scripts/navigation-extended.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/shoppingList-class.js"></script>
   </body>
 </html>

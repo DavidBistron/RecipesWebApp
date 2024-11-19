@@ -36,6 +36,7 @@
 						<thead>
 							<tr>
 								<th>Name</th>
+								<th>Ingredients</th>
 								<th>Category</th>
 								<th>Id</th>
 								<th>Delete</th>
@@ -48,18 +49,34 @@
 				</div>
 
 				<!-- Input for adding new recipes -->
-				<form id="recipe-form">
-					<p>Add a new recipe:</p>
-						<div>
-							Recipe Name: <input type="text" id="recipe-name" placeholder="Name" required>
+				<div>
+					<form id="recipe-form">
+						
+						<h2>Add a new recipe:</h2>
+						<hr>
+						
+						<div class="recipe-grid">
+							<p>Recipe Name:</p>
+							<input type="text" id="recipe-name" placeholder="Name" required>
 						</div>
-						<div>
-							Recipe Category: <input type="text" id="recipe-category" placeholder="Category" required>
+
+						<div class="recipe-grid">
+							<p>Ingredients:</p>
+							<input type="text" id="recipe-ingredients" placeholder="Ingredient" required>
 						</div>
+
+						<div class="recipe-grid">
+							<p>Recipe Category:</p>
+							<input type="text" id="recipe-category" placeholder="Category" required>
+						</div>
+
 						<div>
+							<p></p>
 							<button class="search-button" type="submit">Add</button>
 						</div>
-				</form>
+
+					</form>
+				</div>
 			</div>
 		</div>
 

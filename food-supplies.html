@@ -31,9 +31,46 @@
 
 			<!-- Right grid -->
 			<div class="main-grid-right">
-				
-				
+				<div>
+					<!-- List of all recipes -->
+					<table id="ingredients-list" style="width: 100%;">
+						<thead>
+							<tr>
+								<th>Ingredient</th>
+								<th>Category</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- dynamic display of ingredients via JS -->
+						</tbody>
+					</table>
+				</div>
 
+				<!-- Input for adding new recipes -->
+				<div>
+					<form id="supply-form">
+						
+						<h2>Add a new ingredient:</h2>
+						<hr>
+						
+						<div class="recipe-grid">
+							<p>Ingredient Name:</p>
+							<input type="text" id="supply-name" placeholder="Name" required>
+						</div>
+
+						<div class="recipe-grid">
+							<p>Category:</p>
+							<input type="text" id="supply-category" placeholder="Name" required>
+						</div>
+
+						<div>
+							<p></p>
+							<button class="search-button" type="submit">Add</button>
+						</div>
+
+					</form>
+				</div>
 			</div>
 		</div>
 
@@ -44,6 +81,6 @@
 
 		<!-- Integration of external script -->
 		<script src="scripts/navigation-extended.js"></script>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/foodSupplies-class.js"></script>
   </body>
 </html>

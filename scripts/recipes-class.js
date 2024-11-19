@@ -1,9 +1,11 @@
 // Class for Recipes
 class Recipe {
 
-  constructor(name, category, id) {
+  constructor(name, ingredients = [], category, id) {
     this.name = name;
+    this.ingredients = ingredients;
     this.category = category;
+
     // Every Recipe gets an unique String-ID 
     // toString(36) = Base-36 format - substring(2,6) = cut first two and generate id of length 4 
     this.id = Math.random().toString(36).substring(2,6);  
@@ -15,11 +17,13 @@ const recipesArray = [];
 
 // Add default recipes to array
 // ------------------------------------------------------------------------------------------
-const defaultRecipe1 = new Recipe("Nudelsalat", "Salate", Math.floor(Math.random()*100));
-const defaultRecipe2 = new Recipe("Wurstebrei", "Fleisch", Math.floor(Math.random()*100));
+const defaultRecipe1 = new Recipe("Noodle Salad", ["Noodles, Mayo, Carrots, Peas"], "Salad", Math.floor(Math.random()*100));
+const defaultRecipe2 = new Recipe("Pizza", ["Cheese, Onions, Capsicum"], "Lunch", Math.floor(Math.random()*100));
+const defaultRecipe3 = new Recipe("Bruschetta", ["Bread, Tomatoes, Balsamic"], "Dinner", Math.floor(Math.random()*100));
 
 recipesArray.push(defaultRecipe1);
 recipesArray.push(defaultRecipe2);
+recipesArray.push(defaultRecipe3);
 // ------------------------------------------------------------------------------------------
 
 // Function for rendering table
@@ -28,13 +32,18 @@ function renderTable(recipesArray) {
   tableBody.innerHTML = "";
 
   recipesArray.forEach (obj => {
-    // Create new row
+    // Create new row for every entry
     const row = document.createElement("tr");
 
     // Add new row for name
     const cellName = document.createElement("td");
     cellName.textContent = obj.name;
     row.appendChild(cellName);
+
+    // Add ingredients for a recipe
+    const celIngredient = document.createElement("td");
+    celIngredient.textContent = obj.ingredients;
+    row.appendChild(celIngredient);
 
     // Add new row for category
     const cellCategory = document.createElement("td");
@@ -52,7 +61,7 @@ function renderTable(recipesArray) {
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
-      deleteRecipe(obj); // ????      
+      deleteRecipe(obj);    
     };
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
@@ -66,8 +75,8 @@ function renderTable(recipesArray) {
 renderTable(recipesArray);
 
 // Function for adding new recipes
-function addRecipe(name, category, id) {
-  let recipe = new Recipe(name, category, id);
+function addRecipe(name, ingredients, category, id) {
+  let recipe = new Recipe(name, ingredients, category, id);
   recipesArray.push(recipe);
   renderTable(recipesArray);
 }
@@ -83,62 +92,16 @@ function deleteRecipe(index) {
 document.getElementById('recipe-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Verhindert das Neuladen der Seite
   const name = document.getElementById('recipe-name').value;
+  const ingredients = document.getElementById('recipe-ingredients').value;
   const category = document.getElementById('recipe-category').value;
 
-  if (name && category) {
-      addRecipe(name, category);
-      document.getElementById('recipe-name').value = ''; // Eingabefeld leeren
+  if (name && ingredients && category) {
+      addRecipe(name, ingredients, category);
+      // Empty input field after entry
+      document.getElementById('recipe-name').value = '';
+      document.getElementById('recipe-ingredients').value = '';
       document.getElementById('recipe-category').value = '';
   } else {
     alert('Bitte fülle alle Felder aus.');
   }
 });
-
-
-
-/*
-// Function for adding new recipes
-function addRecipe(name, category, id) {
-  let recipe = new Recipe(name, category, id);
-  recipesArray.push(recipe);
-  renderRecipes();
-}
-
-// Function for deleting existing recipes
-function deleteRecipe(index) {
-  recipesArray.splice(index, 1);
-  renderRecipes();
-}
-
-// Function for rendering recipes list
-function renderRecipes() {
-  let recipeList = document.getElementById('recipe-list');   
-  recipeList.innerHTML = '';                                  // Liste leeren
-
-  recipesArray.forEach((recipe, index) => {
-    let li = document.createElement('li');
-    li.classList.add('recipe-item');
-    li.innerHTML = `Recipe Name: ${recipe.name} <br> Recipe Category: ${recipe.category} <br> ID: ${recipe.id}
-      <button class="trash-can" onclick="deleteRecipe(${index})">&#128465</button>`;
-    recipeList.appendChild(li);
-  });
-}
-
-// Event listener for form
-document.getElementById('recipe-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Verhindert das Neuladen der Seite
-  const name = document.getElementById('recipe-name').value;
-  const category = document.getElementById('recipe-category').value;
-
-  if (name && category) {
-      addRecipe(name, category);
-      document.getElementById('recipe-name').value = ''; // Eingabefeld leeren
-      document.getElementById('recipe-category').value = '';
-  } else {
-    alert('Bitte fülle alle Felder aus.');
-  }
-});
-
-// Render recipes list
-renderRecipes();
-*/
