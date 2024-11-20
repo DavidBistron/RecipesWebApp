@@ -7,7 +7,17 @@ body {
     margin: 2%;
 }
 
-table, th, td {
+@media only screen and (min-width: 1200px) {
+    body {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+th {
+    background-color: rgba(50, 114, 185);
+}
+table, td {
     border: 1px solid white;
     border-collapse: collapse;
 }
@@ -98,7 +108,7 @@ img:hover {
     cursor: pointer;
     width: 20%;
     height: 10%;
-    transition: 1s;
+    border: none;
     border-radius: 10vw;
 }
 

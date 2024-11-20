@@ -61,7 +61,22 @@
 
 						<div class="recipe-grid">
 							<p>Category:</p>
+							
+							<!--
 							<input type="text" id="supply-category" placeholder="Name" required>
+							-->
+							<input list="supplies-groups" id="supply-category" placeholder="Category" required>
+							<datalist id="supplies-groups">
+								<option value="Vegetables"></option>
+								<option value="Fruits"></option>
+								<option value="Grain, Bread, Cereal"></option>
+								<option value="Meat, Fish"></option>
+								<option value="Nuts, Seeds, Legumes, Beans"></option>
+								<option value="Milk, Yoghurt, Cheese"></option>
+								<option value="Water, Coffee, Tea"></option>
+								<option value="Other Ingredient"></option>
+							</datalist>
+
 						</div>
 
 						<div>

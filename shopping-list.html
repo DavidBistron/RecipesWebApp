@@ -62,7 +62,17 @@
 
 						<div class="recipe-grid">
 							<p>Category:</p>
-							<input type="text" id="shoppingElement-category" placeholder="Name" required>
+							<input list="food-groups" id="shoppingElement-category" placeholder="Category" required>
+							<datalist id="food-groups">
+								<option value="Vegetables"></option>
+								<option value="Fruits"></option>
+								<option value="Grain, Bread, Cereal"></option>
+								<option value="Meat, Fish"></option>
+								<option value="Nuts, Seeds, Legumes, Beans"></option>
+								<option value="Milk, Yoghurt, Cheese"></option>
+								<option value="Water, Coffee, Tea"></option>
+								<option value="Other Food"></option>
+							</datalist>
 						</div>
 
 						<div class="recipe-grid">

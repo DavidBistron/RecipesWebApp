@@ -22,7 +22,7 @@ function renderTable(supplyArray) {
   const tableBody = document.querySelector("#ingredients-list tbody");
   tableBody.innerHTML = "";
 
-  supplyArray.forEach (obj => {
+  supplyArray.forEach ((obj, index) => {
     // Create new row for every entry
     const row = document.createElement("tr");
 
@@ -42,7 +42,7 @@ function renderTable(supplyArray) {
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
-      deleteSupply(obj);    
+      deleteSupply(index);    
     };
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);

@@ -1,3 +1,4 @@
+/*
 // Step 1: Array with all recipes
 const recipeList = [
   'Burger',
@@ -67,3 +68,4 @@ function addNewRecipe() {
   displayRecipes();
   console.log(recipe);
 }
+*/

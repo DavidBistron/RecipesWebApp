@@ -62,12 +62,22 @@
 
 						<div class="recipe-grid">
 							<p>Ingredients:</p>
-							<input type="text" id="recipe-ingredients" placeholder="Ingredient" required>
+							<input type="text" id="recipe-ingredients" placeholder="Ingredients" required>
 						</div>
 
 						<div class="recipe-grid">
-							<p>Recipe Category:</p>
-							<input type="text" id="recipe-category" placeholder="Category" required>
+							<p>Category:</p>
+							<input list="recipe-groups" id="recipe-category" placeholder="Category" required>
+							<datalist id="recipe-groups">
+								<option value="Breakfast"></option>
+								<option value="Lunch"></option>
+								<option value="Dinner"></option>
+								<option value="Side"></option>
+								<option value="Sauce"></option>
+								<option value="Cake/Dessert"></option>
+								<option value="Smoothie"></option>
+								<option value="Other Recipe"></option>
+							</datalist>
 						</div>
 
 						<div>

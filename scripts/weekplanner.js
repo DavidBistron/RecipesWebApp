@@ -34,7 +34,7 @@ function renderTable(weekArray) {
   const tableBody = document.querySelector("#week-list tbody");
   tableBody.innerHTML = "";
 
-  weekArray.forEach (obj => {
+  weekArray.forEach ((obj, index) => {
     // Create new row for every entry
     const row = document.createElement("tr");
 
@@ -51,10 +51,11 @@ function renderTable(weekArray) {
     // Add new row for delete button
     const cellDelete = document.createElement("td");
     const deleteButton = document.createElement("button");
+    // deleteButton.setAttribute("data-index", index);
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
-      deleteWeekElement(obj);    
+      deleteWeekElement(index);    
     };
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
@@ -95,3 +96,6 @@ document.getElementById('weekElement-form').addEventListener('submit', function(
     alert('Bitte fülle alle Felder aus.');
   }
 });
+
+
+// IN das WeekArray soll der RezeptName gespeichert werden

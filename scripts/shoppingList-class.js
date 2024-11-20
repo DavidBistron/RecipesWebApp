@@ -27,7 +27,7 @@ function renderTable(shoppingElementArray) {
   const tableBody = document.querySelector("#shopping-list tbody");
   tableBody.innerHTML = "";
 
-  shoppingElementArray.forEach (obj => {
+  shoppingElementArray.forEach ((obj, index) => {
     // Create new row for every entry
     const row = document.createElement("tr");
 
@@ -52,7 +52,7 @@ function renderTable(shoppingElementArray) {
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
-      deleteShoppingElement(obj);    
+      deleteShoppingElement(index);    
     };
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);

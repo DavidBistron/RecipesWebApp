@@ -31,7 +31,7 @@ function renderTable(recipesArray) {
   const tableBody = document.querySelector("#recipe-list tbody");
   tableBody.innerHTML = "";
 
-  recipesArray.forEach (obj => {
+  recipesArray.forEach ((obj, index) => {
     // Create new row for every entry
     const row = document.createElement("tr");
 
@@ -61,7 +61,7 @@ function renderTable(recipesArray) {
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
-      deleteRecipe(obj);    
+      deleteRecipe(index);    
     };
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
