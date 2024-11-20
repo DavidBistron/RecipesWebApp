@@ -8,10 +8,10 @@ class ShoppingElement {
   }
 }
 
-// Array for saving supplies
+// Array for saving shopping elements
 const shoppingElementArray = [];
 
-// Add default ingredients to array
+// Add default shopping elements to array
 // ------------------------------------------------------------------------------------------
 const defaultShoppingElement1 = new ShoppingElement("Banana", "Fruits", 8);
 const defaultShoppingElement2 = new ShoppingElement("M&Ms", "Sweets", "1kg");
@@ -57,7 +57,7 @@ function renderTable(shoppingElementArray) {
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
    
-    // add row to table
+    // Add row to table
     tableBody.appendChild(row);
   });
 }

@@ -12,7 +12,8 @@ class Recipe {
   }
 }
 
-// Array for saving recipes
+// Array for saving recipes --> Export recipesArray to weeklplanner.js
+// export const recipesArray = [];
 const recipesArray = [];
 
 // Add default recipes to array
@@ -66,7 +67,7 @@ function renderTable(recipesArray) {
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
    
-    // add row to table
+    // Add row to table
     tableBody.appendChild(row);
   });
 }
@@ -80,7 +81,6 @@ function addRecipe(name, ingredients, category, id) {
   recipesArray.push(recipe);
   renderTable(recipesArray);
 }
-
 
 // Function for deleting existing recipes
 function deleteRecipe(index) {

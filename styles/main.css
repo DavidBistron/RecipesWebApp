@@ -1,4 +1,5 @@
-/* Main */
+/* general styles */
+/* body */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgba(33, 50, 73);
@@ -7,30 +8,7 @@ body {
     margin: 2%;
 }
 
-@media only screen and (min-width: 1200px) {
-    body {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-
-th {
-    background-color: rgba(50, 114, 185);
-}
-table, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-}
-
-tr:hover {
-    background-color: rgba(82, 150, 214);
-}
-
-button {
-    font-size: 150%;
-    color: rgba(255, 255, 255);
-}
-
+/* heading size no 1 */
 h1 {
     text-align: center;
     background-color: rgba(82, 150, 214);
@@ -40,8 +18,14 @@ h1 {
     border: 0.1em solid rgba(255, 255, 255);
 }
 
+/* image (roboter) */
 img {
     width: 25%;
+}
+
+/* div style for robot img */ 
+.img-robot {
+    align-content: end;
 }
 
 /* Image flip by hover */
@@ -50,6 +34,75 @@ img:hover {
     transform: scaleX(-1);
 }
 
+/* Shrink view if screen is bigger than 1200px */
+@media only screen and (min-width: 1200px) {
+    body {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+/* table styles */
+/* table-header */
+th {
+    background-color: rgba(50, 114, 185);
+}
+
+/* table and table-data */
+table, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+/* table-row change color while hover */
+tr:hover {
+    background-color: rgba(82, 150, 214);
+}
+
+/* Button styles */
+/* general button styles */
+button {
+    font-size: 150%;
+    color: rgba(255, 255, 255);
+}
+
+/* delete btn (red cross in lists) */
+.btn-delete-recipe {
+    color: White;
+    background: none;
+    border: none;
+}
+
+.btn-delete-recipe:hover {
+    font-weight: bold;
+    color: red;
+}
+
+/* standard add btn */
+.add-button {
+    background-color: rgba(50, 114, 185);
+    color: rgba(255, 255, 255);
+    cursor: pointer;
+    width: 20%;
+    height: 10%;
+    border: none;
+    border-radius: 10vw;
+}
+
+/* pseudo-class invert colors by hovering */
+.add-button:hover {
+    background-color: rgb(214, 135, 82);
+    color: rgba(255, 255, 255);
+    border: none;
+}
+
+/* pseudo-class - what should happen when button is clicked */
+.add-button:active {
+    opacity: 0.01s;
+    background-color: black;   
+}
+
+/* Grid */
 /* Main Grid */
 .main-grid {
     display: grid;
@@ -86,45 +139,14 @@ img:hover {
     overflow: scroll;
 }
 
-.img-robot {
-    align-content: end;
+/* input grid for input fields */
+.input-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
 }
 
-.btn-delete-recipe {
-    color: White;
-    background: none;
-    border: none;
-}
-
-.btn-delete-recipe:hover {
-    font-weight: bold;
-    color: red;
-}
-
-/* Buttons */
-.css-add-button, .search-button {
-    background-color: rgba(50, 114, 185);
-    color: rgba(255, 255, 255);
-    cursor: pointer;
-    width: 20%;
-    height: 10%;
-    border: none;
-    border-radius: 10vw;
-}
-
-/* pseudo-class invert colors */
-.css-add-button:hover, .search-button:hover {
-    background-color: rgb(214, 135, 82);
-    color: rgba(255, 255, 255);
-    border: none;
-}
-
-/* pseudo-class - what should happen when button is clicked */
-.css-add-button:active, .css-search-button:active {
-    opacity: 0.01s;
-    background-color: black;   
-}
-
+/* input fields for adding new recipes, ingredients etc. */
 input {
     border: none;
     text-align: center;
@@ -137,10 +159,4 @@ input {
 
 ::placeholder {
     color: rgba(255, 255, 255);
-}
-
-.recipe-grid {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
 }

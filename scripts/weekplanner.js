@@ -1,3 +1,6 @@
+// Import Recipes from recipes-class.js
+// import { recipesArray } from './recipes-class.js';
+
 // Class for Week-Planning
 class WeekElement {
 
@@ -7,10 +10,10 @@ class WeekElement {
   }
 }
 
-// Array for saving recipes
+// Array for saving week elements
 const weekArray = [];
 
-// Add default ingredients to array
+// Add default week elements to array
 // ------------------------------------------------------------------------------------------
 const defaultWeekElement1 = new WeekElement("Monday", "Pizza");
 const defaultWeekElement2 = new WeekElement("Tuesday", "Salad");
@@ -51,7 +54,6 @@ function renderTable(weekArray) {
     // Add new row for delete button
     const cellDelete = document.createElement("td");
     const deleteButton = document.createElement("button");
-    // deleteButton.setAttribute("data-index", index);
     deleteButton.classList.add("btn-delete-recipe");
     deleteButton.textContent = "X";
     deleteButton.onclick = function() {
@@ -60,7 +62,7 @@ function renderTable(weekArray) {
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
    
-    // add row to table
+    // Add row to table
     tableBody.appendChild(row);
   });
 }
@@ -96,6 +98,3 @@ document.getElementById('weekElement-form').addEventListener('submit', function(
     alert('Bitte fülle alle Felder aus.');
   }
 });
-
-
-// IN das WeekArray soll der RezeptName gespeichert werden

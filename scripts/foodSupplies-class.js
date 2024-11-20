@@ -10,7 +10,7 @@ class Supply {
 // Array for saving supplies
 const supplyArray = [];
 
-// Add default ingredients to array
+// Add default supplies to array
 // ------------------------------------------------------------------------------------------
 const defaultSupply1 = new Supply("Noodles", "Durum");
 
@@ -26,12 +26,12 @@ function renderTable(supplyArray) {
     // Create new row for every entry
     const row = document.createElement("tr");
 
-    // Add row for ingredient
+    // Add row for ingredientName
     const cellIngredient = document.createElement("td");
     cellIngredient.textContent = obj.name;
     row.appendChild(cellIngredient);
 
-    // Add row for category
+    // Add row for ingredientCategory
     const cellCategory = document.createElement("td");
     cellCategory.textContent = obj.category;
     row.appendChild(cellCategory);
@@ -47,7 +47,7 @@ function renderTable(supplyArray) {
     cellDelete.appendChild(deleteButton);
     row.appendChild(cellDelete);
    
-    // add row to table
+    // Add row to table
     tableBody.appendChild(row);
   });
 }
